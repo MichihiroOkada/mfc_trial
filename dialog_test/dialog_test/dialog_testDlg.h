@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "CDialogError.h"
 
 
 // CdialogtestDlg ダイアログ
@@ -33,4 +34,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
+
+private:
+	CDialogError m_dialogError;
 };

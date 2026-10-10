@@ -195,6 +195,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CDialogError.h" />
     <ClInclude Include="dialog_test.h" />
     <ClInclude Include="dialog_testDlg.h" />
     <ClInclude Include="framework.h" />
@@ -203,6 +204,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CDialogError.cpp" />
     <ClCompile Include="dialog_test.cpp" />
     <ClCompile Include="dialog_testDlg.cpp" />
     <ClCompile Include="pch.cpp">

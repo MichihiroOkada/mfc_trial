@@ -27,6 +27,7 @@ public:
 // 実装
 
 	DECLARE_MESSAGE_MAP()
+
 };
 
 extern CdialogtestApp theApp;

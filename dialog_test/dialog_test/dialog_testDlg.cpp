@@ -7,6 +7,7 @@
 #include "dialog_test.h"
 #include "dialog_testDlg.h"
 #include "afxdialogex.h"
+#include "CDialogError.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -157,5 +158,13 @@ HCURSOR CdialogtestDlg::OnQueryDragIcon()
 
 void CdialogtestDlg::OnBnClickedButton1()
 {
-	// TODO: ここにコントロール通知ハンドラー コードを追加します。
+	// エラーダイアログを表示する
+	//CDialogError dlg;
+	//dlg.DoModal();
+
+	// モードレス
+	//bool result = m_dialogError.show(this);
+
+	// モーダル
+	bool result = m_dialogError.show();
 }
