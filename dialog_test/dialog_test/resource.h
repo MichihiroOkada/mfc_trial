@@ -5,12 +5,12 @@
 #define IDM_ABOUTBOX                    0x0010
 #define IDD_ABOUTBOX                    100
 #define IDS_ABOUTBOX                    101
-#define IDD_DIALOG_TEST_DIALOG          102
 #define IDD_DIALOG_TEST_ERROR           103
 #define IDR_MAINFRAME                   128
 #define IDC_BUTTON1                     1000
 #define IDOK_ORIGINAL                   1001
 #define IDCANCEL_ORIGINAL               1002
+#define IDC_STATIC_TEXT_ORIGINAL        1003
 
 // Next default values for new objects
 // 

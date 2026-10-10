@@ -34,4 +34,5 @@ public:
 
 private:
 	ULONG_PTR m_gdiplusToken = 0;
+	CFont m_font;
 };

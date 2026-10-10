@@ -197,8 +197,6 @@
   <ItemGroup>
     <ClInclude Include="CDialogError.h" />
     <ClInclude Include="Controller.h" />
-    <ClInclude Include="dialog_test.h" />
-    <ClInclude Include="dialog_testDlg.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -211,12 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="dialogtest.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\dialogtest.rc2" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="res\dialog_test.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

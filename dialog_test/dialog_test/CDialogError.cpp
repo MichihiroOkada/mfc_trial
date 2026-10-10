@@ -35,8 +35,97 @@ void CDialogError::DoDataExchange(CDataExchange* pDX)
 BOOL CDialogError::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	CRect clientRect;
 
-	// "バージョン情報..." メニューをシステム メニューに追加します。
+	// ダイアログの位置とサイズを設定
+	SetWindowPos(
+		nullptr,
+		1000, 300,	// x, y
+		400, 400,   // width, height
+		SWP_NOZORDER
+	);
+
+	// クライアント領域のサイズを取得
+	GetClientRect(&clientRect);
+
+	// ボタンの位置を設定
+	CWnd* pOKButton = GetDlgItem(IDOK_ORIGINAL);
+	CWnd* pCANCELButton = GetDlgItem(IDCANCEL_ORIGINAL);
+	int buttonWidth = 100;
+	int buttonHeight = 30;
+	int margin = 10;
+
+	int baseWindowWidth = clientRect.Width();
+	int baseWindowHeight = clientRect.Height();
+
+#if 0
+	if (pOKButton != nullptr)
+	{
+		pOKButton->SetWindowPos(
+			nullptr,
+			200, 300,  // X座標、Y座標
+			100, 30,      // 幅、高さ（変更しない）
+			SWP_NOZORDER
+		);
+	}
+	if (pCANCELButton != nullptr)
+	{
+		pCANCELButton->SetWindowPos(
+			nullptr,
+			300, 300,  // X座標、Y座標
+			100, 30,      // 幅、高さ（変更しない）
+			SWP_NOZORDER
+		);
+	}
+#else
+	if (pOKButton != nullptr)
+	{
+		pOKButton->SetWindowPos(
+			nullptr,
+			baseWindowWidth  - ( buttonWidth + margin ) * 2,  // X座標
+			baseWindowHeight - ( buttonHeight + margin ),  // Y座標
+			buttonWidth, buttonHeight,      // 幅、高さ（変更しない）
+			SWP_NOZORDER
+		);
+	}
+	if (pCANCELButton != nullptr)
+	{
+		pCANCELButton->SetWindowPos(
+			nullptr,
+			baseWindowWidth  - ( buttonWidth + margin ),  // X座標
+			baseWindowHeight - ( buttonHeight + margin ),  // Y座標
+			buttonWidth, buttonHeight,      // 幅、高さ（変更しない）
+			SWP_NOZORDER
+		);
+	}
+
+#endif
+	CWnd* pStaticText = GetDlgItem(IDC_STATIC_TEXT_ORIGINAL);
+	if (pStaticText != nullptr) {
+		int textX = 100;
+		int textY = 10;
+		int textWidth = 100;
+		int textHeight = 30;
+		pStaticText->SetWindowText(_T("OlympusLOGO"));
+		pStaticText->SetWindowPos(
+			nullptr,
+			textX, textY,  // X座標、Y座標
+			textWidth, textHeight,      // 幅、高さ（変更しない）
+			SWP_NOZORDER
+		);
+	}
+
+
+	// フォントの作成
+	m_font.CreatePointFont(100, _T("メイリオ"));
+
+	// ダイアログのフォント
+	SetFont(&m_font);
+
+	// 子コントロールのフォント
+	GetDlgItem(IDOK_ORIGINAL)->SetFont(&m_font);
+	GetDlgItem(IDCANCEL_ORIGINAL)->SetFont(&m_font);
+	GetDlgItem(IDC_STATIC_TEXT_ORIGINAL)->SetFont(&m_font);
 
 	Gdiplus::GdiplusStartupInput startupInput;
 
