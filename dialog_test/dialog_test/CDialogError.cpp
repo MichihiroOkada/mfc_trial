@@ -37,6 +37,9 @@ BOOL CDialogError::OnInitDialog()
 	CDialogEx::OnInitDialog();
 	CRect clientRect;
 
+	// ウィンドウのスタイルを変更してタイトルバーを非表示にする
+	ModifyStyle(WS_CAPTION, 0);
+
 	// ダイアログの位置とサイズを設定
 	SetWindowPos(
 		nullptr,
