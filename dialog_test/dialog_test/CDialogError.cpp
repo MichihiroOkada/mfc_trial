@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "CDialogError.h"
 #include "resource.h"
+#include "Controller.h"
 
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
@@ -63,20 +64,20 @@ BOOL CDialogError::OnDestroy()
 }
 
 #if 1
-bool CDialogError::show()
+int CDialogError::show()
 {
-	int nResponse = DoModal();
-	if (nResponse == 100)
+	int nResponse = (int)DoModal();
+	if (nResponse == RESULT_OK)
 	{
 		// OK ボタンが押された場合の処理
-		return true;
+		return nResponse;
 	}
-	else if (nResponse == 200)
+	else if (nResponse == RESULT_CANCEL)
 	{
 		// キャンセル ボタンが押された場合の処理
-		return false;
+		return nResponse;
 	}
-	return false;
+	return 0;
 }
 #else
 bool CDialogError::show(CWnd *pParent)
@@ -126,11 +127,11 @@ void CDialogError::OnPaint()
 void CDialogError::OnBnClickedOriginal()
 {
 	// TODO: ここにコントロール通知ハンドラー コードを追加します。
-	EndDialog(100);
+	EndDialog(RESULT_OK);
 }
 
 void CDialogError::OnBnClickedCancelOriginal()
 {
 	// TODO: ここにコントロール通知ハンドラー コードを追加します。
-	EndDialog(200);
+	EndDialog(RESULT_CANCEL);
 }

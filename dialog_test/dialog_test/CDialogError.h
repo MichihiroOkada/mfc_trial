@@ -29,7 +29,7 @@ public:
 	virtual BOOL OnInitDialog();
 	virtual BOOL OnDestroy();
 
-	bool show();
+	int show();
 	//bool show(CWnd *pParent);
 
 private:
