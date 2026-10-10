@@ -1,0 +1,52 @@
+.vs/
+*.VC.db
+*.VC.VC.opendb
+
+# Build results
+Debug/
+Release/
+x64/
+x86/
+build/
+out/
+
+# Intermediate files
+*.obj
+*.iobj
+*.ipdb
+*.pch
+*.ilk
+*.idb
+*.tlog
+*.lastbuildstate
+
+# Executables
+*.exe
+*.dll
+*.lib
+*.exp
+
+# Debug symbols
+*.pdb
+
+# Generated resources
+*.aps
+
+# Visual Studio cache
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Test outputs
+Testing/
+TestResults/
+
+# Logs
+*.log
